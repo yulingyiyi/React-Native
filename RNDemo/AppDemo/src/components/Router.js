@@ -2,7 +2,7 @@
  * @Author: tom 
  * @Date: 2018-04-27 20:00:45 
  * @Last Modified by: jerry
- * @Last Modified time: 2018-04-27 20:23:39
+ * @Last Modified time: 2018-04-28 13:44:14
  */
 
  import React, {  Component }  from 'react';
@@ -18,6 +18,8 @@
               title : 'index',
           }
       }
+ },{
+    headerMode : 'none',
  });
 
  const FindNav = StackNavigator({

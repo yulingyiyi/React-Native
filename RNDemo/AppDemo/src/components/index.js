@@ -2,7 +2,7 @@
  * @Author: tom 
  * @Date: 2018-04-27 19:56:00 
  * @Last Modified by: jerry
- * @Last Modified time: 2018-04-28 09:08:01
+ * @Last Modified time: 2018-04-28 14:07:23
  */
 import React, { Component } from "react";
 import {
@@ -17,10 +17,10 @@ const ModuleManager = NativeModules.ModuleManager;
 
 
 export default class IndexScreen extends Component {
-     
-    static navigationOptions = {
-      title: 'Welcome',
-    };
+  
+     static navigationOptions = {
+          title: 'homeThree',
+      };
      constructor(props){
        super(props);
        self.state = {
