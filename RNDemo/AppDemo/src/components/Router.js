@@ -2,7 +2,7 @@
  * @Author: tom 
  * @Date: 2018-04-27 20:00:45 
  * @Last Modified by: jerry
- * @Last Modified time: 2018-04-28 13:44:14
+ * @Last Modified time: 2018-04-28 15:44:03
  */
 
  import React, {  Component }  from 'react';
@@ -10,6 +10,7 @@
  import IndexScreen from '../components/index';
  import FindScreen from '../components/find';
  import MeScreen from '../components/me';
+ import  LendScreen from '../components/lend';
 
  const IndexNav = StackNavigator({
       root: {
@@ -22,20 +23,27 @@
     headerMode : 'none',
  });
 
- const FindNav = StackNavigator({
+ const LendNav = StackNavigator({
     root: {
-        screen : FindScreen,
+        screen : LendScreen,
         navigationOptions:{
-            title : 'find',
+            title : '全部产品',
         }
     }
 });
-
+const FindNav = StackNavigator({
+    root: {
+        screen : FindScreen,
+        navigationOptions:{
+            title : '发现',
+        }
+    }
+});
 const MeNav = StackNavigator({
     root: {
         screen : MeScreen,
         navigationOptions:{
-            title : 'me',
+            title : '我的',
         }
     }
 });
@@ -45,19 +53,25 @@ const MeNav = StackNavigator({
        index: {
            screen : IndexNav,
            navigationOptions:{
-            tabBarLabel: 'index',
+            tabBarLabel: '',
            }
+       },
+       lend: {
+            screen : LendNav,
+            navigationOptions:{
+            tabBarLabel: '出借',
+            }
        },
        find:{
            screen : FindNav,
            navigationOptions:{
-            tabBarLabel: 'find',
+            tabBarLabel: '发现',
            }
        },
        me: {
            screen: MeNav,
            navigationOptions:{
-            tabBarLabel: 'me',
+            tabBarLabel: '我的',
            }
        }
  });

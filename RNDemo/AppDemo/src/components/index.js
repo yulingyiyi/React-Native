@@ -2,7 +2,7 @@
  * @Author: tom 
  * @Date: 2018-04-27 19:56:00 
  * @Last Modified by: jerry
- * @Last Modified time: 2018-04-28 14:07:23
+ * @Last Modified time: 2018-04-28 14:38:10
  */
 import React, { Component } from "react";
 import {
@@ -10,9 +10,10 @@ import {
     View,
     Text,
     Button,
-    NativeModules
+    NativeModules,
+    
 } from 'react-native';
-
+// import {  } from "module";
 const ModuleManager = NativeModules.ModuleManager;
 
 
