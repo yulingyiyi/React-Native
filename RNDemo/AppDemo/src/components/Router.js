@@ -2,7 +2,7 @@
  * @Author: tom 
  * @Date: 2018-04-27 20:00:45 
  * @Last Modified by: jerry
- * @Last Modified time: 2018-04-28 15:44:03
+ * @Last Modified time: 2018-04-28 18:25:38
  */
 
  import React, {  Component }  from 'react';
@@ -11,6 +11,8 @@
  import FindScreen from '../components/find';
  import MeScreen from '../components/me';
  import  LendScreen from '../components/lend';
+ import  GoodsInfoScreen  from '../components/goodsInfo';
+
 
  const IndexNav = StackNavigator({
       root: {
@@ -28,6 +30,12 @@
         screen : LendScreen,
         navigationOptions:{
             title : '全部产品',
+        }
+    },
+    goodsInfo:{
+        screen : GoodsInfoScreen,
+        navigationOptions:{
+            title : '产品信息',
         }
     }
 });

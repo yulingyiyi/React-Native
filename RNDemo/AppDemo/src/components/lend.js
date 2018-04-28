@@ -2,7 +2,7 @@
  * @Author: tom 
  * @Date: 2018-04-28 14:30:49 
  * @Last Modified by: jerry
- * @Last Modified time: 2018-04-28 16:17:58
+ * @Last Modified time: 2018-04-28 18:27:01
  */
 import React, { Component } from "react";
 import {
@@ -10,8 +10,14 @@ import {
     View,
     Text,
     Button,
-    FlatList
+    FlatList,
+    TouchableHighlight,
+    ProgressViewIOS,
+    Alert
 } from 'react-native';
+
+import GoodsInfoScreen from "../components/goodsInfo";
+
 
 export default class LendScreen extends Component {
   
@@ -55,7 +61,13 @@ export default class LendScreen extends Component {
         console.log(item);
 
      }
-    
+    _toGoodsInfoScreen = (item)=> {
+          
+        
+          console.log(item);
+          const { navigate } = this.props.navigation;
+          navigate('goodsInfo');        
+    };
       // 上拉加载更多
     _onEndReached = () => {
         let newData = [];
@@ -81,24 +93,55 @@ export default class LendScreen extends Component {
             sourceData:  this.sourceData
         });
     };
-   
-
-
      _renderItem = ({item}) =>{
-      
             return (
                 <View style= {styles.flatList_item} >
-                    <View>  
+                    <View style={ { flexDirection : 'row',height:20 } }>  
                         <Text> { item.title } </Text>
                         <Text> { item.atleastMoney } </Text>
                     </View>
-                     
-                </View>
-                
-            );
-        
-    }
+                    <View style={ { flexDirection : 'row',height:50,justifyContent : 'space-between' } }>  
+                        <View>
+                            <Text style={{ fontSize: 20 }}> { item.baseEarnings }% </Text>
+                            <Text> 预期年化收益率 </Text>
+                        </View>
+                        <TouchableHighlight onPress={
+                                              this._toGoodsInfoScreen
+                                        //  ()=> {
+                                        //       Alert.alert(
+                                        //             '你点击了按钮',
+                                        //            'Hello World！',
+                                        //           [
+                                        //              {text: '以后再说', onPress: () => console.log('Ask me later pressed')},
+                                        //               {text: '取消', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                                        //              {text: '确定', onPress: () => console.log('OK Pressed')},
+                                        //           ]
+                                        //         )
+                                        //       }
+                        } style={styles.button}>
+                            <View style={{ alignItems: 'center' }}>
+                            <Text>立即转入</Text>
+                         </View>
+                        </TouchableHighlight>
+                    </View>
+                    <View style={ { flexDirection : 'row',height:50, justifyContent : 'space-between', alignContent: 'center'} }>  
+                        <View>
+                          <ProgressViewIOS style={styles.progressView} progressTintColor="purple" progress={0.2}/>
 
+                        </View>
+                        <Text> 剩余可投 { item.atleastMoney } 元 </Text>
+                    </View>
+
+                </View>  
+            );
+    }
+   _renderItemSeparatorComponent = ()=> {
+       return (
+           <View style={{ backgroundColor : '#f5f5f5',height: 10 }}>
+
+           </View>
+       );
+   }
     _keyExtractor = (item, index) => index;
 
     render(){
@@ -117,7 +160,7 @@ export default class LendScreen extends Component {
                 onEndReached={ this._onEndReached }
                 // ListHeaderComponent={ this._renderHeader }
                 // ListFooterComponent={ this._renderFooter }
-                // ItemSeparatorComponent={ this._renderItemSeparatorComponent }
+                ItemSeparatorComponent={ this._renderItemSeparatorComponent }
                 // ListEmptyComponent={ this._renderEmptyView }
                 // refreshing={ this.state.refreshing }
                 // onRefresh={ this._renderRefresh }
@@ -143,10 +186,25 @@ const styles = StyleSheet.create({
       margin: 10,
     },
     flatList_item: {
-      textAlign: 'center',
       backgroundColor: '#FFFFFF',
-      height : 100,
-      marginBottom: 10,
+      height : 120,
+      paddingTop:10,
+      paddingLeft:10,
+      paddingRight:10,
+      paddingBottom:10
     },
+    progressView : {
+        width : 200,
+    },
+    button: {
+        padding: 5,
+        width: 100,
+        height : 25,
+        borderWidth: 1,
+        borderRadius: 5,
+        backgroundColor : '#f00000',
+        // textAlign:'center',     
+        // justifyContent: 'center', //虽然样式中设置了 justifyContent: 'center'，但无效  
+    }
   });
   
