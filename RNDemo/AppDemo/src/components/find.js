@@ -2,7 +2,7 @@
  * @Author: tom 
  * @Date: 2018-04-27 20:00:25 
  * @Last Modified by: jerry
- * @Last Modified time: 2018-04-27 20:26:17
+ * @Last Modified time: 2018-04-28 19:23:10
  */
 import React, { Component } from "react";
 import {
@@ -20,7 +20,6 @@ export default class FindScreen extends Component {
       );
     }
 }
-
 const styles = StyleSheet.create({
     container: {
       flex: 1,
