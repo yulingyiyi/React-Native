@@ -2,7 +2,7 @@
  * @Author: tom 
  * @Date: 2018-04-28 14:30:49 
  * @Last Modified by: yuling
- * @Last Modified time: 2018-04-29 19:05:15
+ * @Last Modified time: 2018-05-02 11:08:13
  */
 import React, { Component } from "react";
 import {
@@ -16,7 +16,7 @@ import {
     Alert
 } from 'react-native';
 
-import GoodsInfoScreen from "../components/goodsInfo";
+import GoodsInfoScreen from "../pages/goodsInfo";
 
 export default class LendScreen extends Component {
   

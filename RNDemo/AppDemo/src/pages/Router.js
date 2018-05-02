@@ -1,17 +1,17 @@
 /*
  * @Author: tom 
  * @Date: 2018-04-27 20:00:45 
- * @Last Modified by: jerry
- * @Last Modified time: 2018-04-28 18:25:38
+ * @Last Modified by: yuling
+ * @Last Modified time: 2018-05-02 11:08:18
  */
 
  import React, {  Component }  from 'react';
  import { StackNavigator, TabNavigator } from "react-navigation";
- import IndexScreen from '../components/index';
- import FindScreen from '../components/find';
- import MeScreen from '../components/me';
- import  LendScreen from '../components/lend';
- import  GoodsInfoScreen  from '../components/goodsInfo';
+ import IndexScreen from '../pages/index';
+ import FindScreen from '../pages/find';
+ import MeScreen from '../pages/me';
+ import  LendScreen from '../pages/lend';
+ import  GoodsInfoScreen  from '../pages/goodsInfo';
 
 
  const IndexNav = StackNavigator({
