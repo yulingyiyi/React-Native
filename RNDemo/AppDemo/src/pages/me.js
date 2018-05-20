@@ -1,9 +1,10 @@
 /*
- * @Author: tom 
- * @Date: 2018-04-27 19:59:05 
- * @Last Modified by: jerry
- * @Last Modified time: 2018-04-28 14:24:59
+ * @Author: yuling 
+ * @Date: 2018-04-28 19:24:54 
+ * @Last Modified by:   yuling 
+ * @Last Modified time: 2018-04-28 19:24:54 
  */
+
 import React, { Component } from "react";
 import {
     StyleSheet,
@@ -15,7 +16,7 @@ import AccountInfo from '../util/account';
 
 const  accountInfo = AccountInfo.ShareInstance();
        accountInfo.name = "accountInfo";
-
+      
 export default class MeScreen extends Component {
     render(){
       return (
