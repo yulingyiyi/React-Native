@@ -25,7 +25,7 @@ export default class IndexScreen extends Component {
       };
      constructor(props){
        super(props);
-       self.state = {
+       this.state = {
 
        };
      }

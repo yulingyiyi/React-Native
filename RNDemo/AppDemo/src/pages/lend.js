@@ -55,15 +55,10 @@ export default class LendScreen extends Component {
         
      }
     
-     _onPressItem =()=>{
-      
-
+     _onPressItem =({item})=>{
         console.log(item);
-
      }
-    _toGoodsInfoScreen = (item)=> {
-          
-        
+    _toGoodsInfoScreen = ({item})=> {
           console.log(item);
           const { navigate } = this.props.navigation;
           navigate('goodsInfo');        
@@ -142,7 +137,7 @@ export default class LendScreen extends Component {
            </View>
        );
    }
-    _keyExtractor = (item, index) => index;
+    _keyExtractor = (item, index) => index.toString();
 
     render(){
 

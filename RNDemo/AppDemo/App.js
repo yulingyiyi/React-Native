@@ -11,7 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-import MainTabBar from './src/components/Router';
+import MainTabBar from './src/pages/Router';
 type Props = {};
 export default class App extends Component<Props> {
   render() {
