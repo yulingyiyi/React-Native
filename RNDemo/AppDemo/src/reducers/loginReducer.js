@@ -4,7 +4,7 @@
  * @Last Modified by: yuling
  * @Last Modified time: 2018-05-20 22:23:56
  */
-import * as types from '../constants/counterTypes';
+import * as types from '../constants/loginTypes';
 
 const initialState = {
     status : '点击登陆',
@@ -16,7 +16,7 @@ export default function loginIn(state=initialState,action){
     switch (action.type) {
         case types.LOGIN_IN_DOING:
             return {
-            ...state,
+                 ...state,
                 status: '正在登陆',
                 isSuccess: false,
                 user: null,

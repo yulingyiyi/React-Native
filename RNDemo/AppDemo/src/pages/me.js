@@ -1,8 +1,8 @@
 /*
  * @Author: yuling 
  * @Date: 2018-04-28 19:24:54 
- * @Last Modified by:   yuling 
- * @Last Modified time: 2018-04-28 19:24:54 
+ * @Last Modified by: yuling
+ * @Last Modified time: 2018-05-21 13:53:02
  */
 
 import React, { Component } from "react";
@@ -44,5 +44,6 @@ const styles = StyleSheet.create({
       color: '#333333',
       marginBottom: 5,
     },
+  
   });
   

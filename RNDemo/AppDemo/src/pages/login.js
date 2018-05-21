@@ -2,7 +2,7 @@
  * @Author: yuling 
  * @Date: 2018-05-20 22:06:58 
  * @Last Modified by: yuling
- * @Last Modified time: 2018-05-20 22:41:36
+ * @Last Modified time: 2018-05-21 14:00:07
  */
 import React, { Component } from 'react';
 import {
@@ -15,6 +15,7 @@ import {
 import { connect } from 'react-redux'; // 引入connect函数
 import *as loginAction from '../actions/loginAction';// 导入action方法
 import { NavigationActions } from 'react-navigation';
+import HeaderPage  from '../components/headerPage';
 // import MainPage from './MainPage';
 const resetAction = NavigationActions.reset({
   index: 0,
@@ -40,7 +41,9 @@ const resetAction = NavigationActions.reset({
   render() {
     const { login } = this.props;
     return(
+      
       <View style={styles.container}>
+         <HeaderPage/>
         <Text>状态: {this.props.status}
         </Text>
         <TouchableOpacity onPress={()=>login()} style={{marginTop: 50}}>
@@ -58,7 +61,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     backgroundColor: '#F5FCFF'
   },
   loginBtn: {

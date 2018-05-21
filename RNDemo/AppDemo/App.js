@@ -12,13 +12,14 @@ import {
   View
 } from 'react-native';
 // import MainTabBar from './src/pages/Router';
-import LoginPage  from './src/pages/login';
+import Root  from './src/Root';
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       // <MainTabBar/>
-       <LoginPage/>
+      //  <LoginPage/>
+      <Root/>
     );
   }
 }
